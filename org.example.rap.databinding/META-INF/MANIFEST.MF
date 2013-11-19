@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Databinding
+Bundle-SymbolicName: org.example.rap.databinding;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.example.rap.databinding.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.rap.ui;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.rap.jface.databinding;bundle-version="2.1.1",
+ org.eclipse.core.databinding;bundle-version="1.4.1",
+ org.eclipse.core.databinding.beans;bundle-version="1.2.200",
+ org.eclipse.core.databinding.property;bundle-version="1.4.200"

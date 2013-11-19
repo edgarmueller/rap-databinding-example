@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="mailapp.entrypoints"
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            path="/mail"
+            applicationId="org.example.rap.databinding.mailapp"
+            id="mailapp.entrypoint">
+      </entrypoint>
+   </extension>
+   <extension
+         id="org.example.rap.databinding.mailapp"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            thread="main"
+            cardinality="singleton-global"
+            visible="true">
+         <run
+               class="org.example.rap.databinding.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RAP Perspective"
+            class="org.example.rap.databinding.Perspective"
+            id="org.example.rap.databinding.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            name="Message"
+            icon="icons/sample2.gif"
+            class="org.example.rap.databinding.View"
+            id="org.example.rap.databinding.view">
+      </view>
+      <view
+            class="org.example.rap.databinding.NavigationView"
+            icon="icons/sample3.gif"
+            id="org.example.rap.databinding.navigationView"
+            name="Mailboxes"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="org.example.rap.databinding.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="org.example.rap.databinding.category"
+            id="org.example.rap.databinding.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Opens a message dialog"
+            categoryId="org.example.rap.databinding.category"
+            id="org.example.rap.databinding.openMessage">
+      </command>
+   </extension>
+
+</plugin>
